@@ -15,6 +15,9 @@ namespace Winagent.Settings
         [JsonProperty(PropertyName = "source")]
         public string Source { get; set; }
 
+        [JsonProperty(PropertyName = "uri")]
+        public Uri Uri { get; set; }
+
         [JsonProperty(PropertyName = "schedule")]
         public Schedule Schedule { get; set; }
     }
