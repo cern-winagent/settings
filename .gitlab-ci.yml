@@ -41,7 +41,7 @@ release_qa:
     - tags
   script: 
     # Update "qa" release name the newest version number
-    - UpdateLatestRelease
+    - DeployQA
   environment: qa
   only:
     - qa
@@ -54,7 +54,7 @@ release_production:
     - tags
   script: 
     # Update "production" release name the newest version number
-    - UpdateLatestRelease
+    - DeployProduction
   environment: production
   when: manual
   only:
