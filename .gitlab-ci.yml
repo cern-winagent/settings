@@ -33,7 +33,7 @@ release:
 
 # This needs to be changed by GitLab
 # Release creation should be 'keyword based'
-release_qa:
+release_staging:
   stage: deploy
   only: 
     - tags
