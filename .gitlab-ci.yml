@@ -6,7 +6,7 @@ stages:
 variables:
   assembly_extension: "dll"
 
-compilation:
+build:
   stage: build
   before_script:
     - nuget restore
