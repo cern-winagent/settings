@@ -42,8 +42,7 @@ release_qa:
   script: 
     # Update "qa" release name the newest version number
     - UpdateLatestRelease
-  environment:
-    - qa
+  environment: qa
   only:
     - qa
 
@@ -56,8 +55,7 @@ release_production:
   script: 
     # Update "production" release name the newest version number
     - UpdateLatestRelease
-  environment:
-    - production
+  environment: production
   when: manual
   only:
     - master
