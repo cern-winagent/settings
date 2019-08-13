@@ -1,6 +1,7 @@
 stages:
   - build
   - release
+  - deploy
 
 variables:
   assembly_extension: "dll"
@@ -30,3 +31,33 @@ release:
     - CreateRelease
     # Update "latest" release name the newest version number
     - UpdateLatestRelease
+
+
+# This needs to be changed by GitLab
+# Release creation should be 'keyword based'
+release_qa:
+  stage: deploy
+  only: 
+    - tags
+  script: 
+    # Update "qa" release name the newest version number
+    - UpdateLatestRelease
+  environment:
+    - qa
+  only:
+    - qa
+
+# This needs to be changed by GitLab
+# Release creation should be 'keyword based'
+release_production:
+  stage: deploy
+  only: 
+    - tags
+  script: 
+    # Update "production" release name the newest version number
+    - UpdateLatestRelease
+  environment:
+    - production
+  when: manual
+  only:
+    - master
