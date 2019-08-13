@@ -29,8 +29,6 @@ release:
   script: 
     # Create a release for the current tag
     - CreateRelease
-    # Update "latest" release name the newest version number
-    - UpdateLatestRelease
 
 
 # This needs to be changed by GitLab
