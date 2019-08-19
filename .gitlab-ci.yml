@@ -40,8 +40,8 @@ release_staging:
     - qa
   script: 
     # Update "qa" release name the newest version number
-    - DeployQA
-  environment: qa
+    - DeployStaging
+  environment: staging
   
 # This needs to be changed by GitLab
 # Release creation should be 'keyword based'
