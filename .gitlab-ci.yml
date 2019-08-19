@@ -54,4 +54,3 @@ release_production:
     # Update "production" release name the newest version number
     - DeployProduction
   environment: production
-  when: manual
