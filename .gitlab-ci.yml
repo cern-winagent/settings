@@ -37,23 +37,21 @@ release_staging:
   stage: deploy
   only: 
     - tags
+    - qa
   script: 
     # Update "qa" release name the newest version number
     - DeployQA
   environment: qa
-  only:
-    - qa
-
+  
 # This needs to be changed by GitLab
 # Release creation should be 'keyword based'
 release_production:
   stage: deploy
   only: 
     - tags
+    - master
   script: 
     # Update "production" release name the newest version number
     - DeployProduction
   environment: production
   when: manual
-  only:
-    - master
