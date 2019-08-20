@@ -44,9 +44,8 @@ release:
 # Release creation should be 'keyword based'
 release_staging:
   stage: deploy
-  only: 
-    variables:
-      - tags
+  only:
+    - tags
   script: 
     # Update "qa" release name the newest version number
     - DeployStaging
