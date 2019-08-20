@@ -29,7 +29,6 @@ build:
     paths:
       - $env:CI_PROJECT_NAME/bin/Release/$env:CI_PROJECT_NAME.$env:ASSEMBLY_EXTENSION
       - $env:CI_PROJECT_NAME/bin/Release/$env:CI_PROJECT_NAME.$env:ASSEMBLY_EXTENSION.sha1
-    expire_in: 1 hour
 
 # This needs to be changed by GitLab
 # Release creation should be 'keyword based'
@@ -47,7 +46,8 @@ release:
 release_staging:
   stage: deploy
   only: 
-    - tags && qa
+    variables:
+      - tags
   script: 
     # Update "qa" release name the newest version number
     - DeployStaging
@@ -58,7 +58,7 @@ release_staging:
 release_production:
   stage: deploy
   only: 
-    - tags && master
+    - master
   script: 
     # Update "production" release name the newest version number
     - DeployProduction
