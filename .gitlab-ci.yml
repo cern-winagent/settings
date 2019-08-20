@@ -17,6 +17,8 @@ test_build:
 
 build:
   stage: build
+  only: 
+    - tags
   before_script:
     - nuget restore
   script:
@@ -45,8 +47,7 @@ release:
 release_staging:
   stage: deploy
   only: 
-    - tags
-    - qa
+    - tags && qa
   script: 
     # Update "qa" release name the newest version number
     - DeployStaging
