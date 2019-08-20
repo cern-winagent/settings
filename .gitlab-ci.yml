@@ -40,7 +40,6 @@ release:
     # Create a release for the current tag
     - CreateRelease
 
-
 # This needs to be changed by GitLab
 # Release creation should be 'keyword based'
 release_staging:
