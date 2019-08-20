@@ -58,8 +58,7 @@ release_staging:
 release_production:
   stage: deploy
   only: 
-    - tags
-    - master
+    - tags && master
   script: 
     # Update "production" release name the newest version number
     - DeployProduction
