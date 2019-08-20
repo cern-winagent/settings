@@ -6,6 +6,15 @@ stages:
 variables:
   assembly_extension: "dll"
 
+test_build:
+  stage: build
+  except: 
+    - tags
+  before_script:
+    - nuget restore
+  script:
+    - msbuild /p:Configuration=Release $env:CI_PROJECT_NAME.sln
+
 build:
   stage: build
   before_script:
