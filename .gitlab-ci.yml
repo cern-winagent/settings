@@ -37,7 +37,7 @@ release:
   stage: release
   only: 
     - tags
-  script: 
+  script:
     # Create a release for the current tag
     - CreateRelease
 
