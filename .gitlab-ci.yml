@@ -35,7 +35,7 @@ build:
 # Release creation should be 'keyword based'
 release:
   stage: release
-  only: 
+  only:
     - tags
   script:
     # Create a release for the current tag
