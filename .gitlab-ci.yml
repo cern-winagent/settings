@@ -47,7 +47,7 @@ release_staging:
   stage: deploy
   only:
     - tags
-  script: 
+  script:
     # Update "qa" release name the newest version number
     - DeployStaging
   environment: staging
