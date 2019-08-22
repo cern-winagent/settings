@@ -15,19 +15,9 @@ variables:
   after_script:
     - (Get-FileHash $env:CI_PROJECT_NAME/bin/Release/$env:CI_PROJECT_NAME.$env:ASSEMBLY_EXTENSION -Algorithm SHA1).Hash > $env:CI_PROJECT_NAME/bin/Release/$env:CI_PROJECT_NAME.$env:ASSEMBLY_EXTENSION.sha1
 
-
-test_build:
-  stage: build
-  except:
-    - tags
-  <<: *build_scripts
-
-
 build:
   stage: build
   environment: production
-  only:
-    - tags
   <<: *build_scripts
   artifacts:
     paths:
