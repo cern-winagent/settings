@@ -17,7 +17,6 @@ variables:
 
 build:
   stage: build
-  environment: production
   <<: *build_scripts
   artifacts:
     paths:
