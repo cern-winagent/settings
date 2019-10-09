@@ -10,6 +10,8 @@ namespace Winagent.Settings
     public class EventLog : IOutputPlugin
 
     {
+        int a = 0;
+
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
         
